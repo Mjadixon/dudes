@@ -8,19 +8,18 @@ public class Dude {
     this.x = x;
     this.y = y;
   }
-  //Make circle
+  //updates screen
   public void update() {
-    x = (float)Math.random()*800;
-    y = (float)Math.random()*800;
-    if (x == 800 || y == 800) {
-      x = x*-1;
-      y = x*-1;
+    x+= 1;
+    y+= 1;
+    if (x >= 800 - width/10) {
+      x *= -1;
+    }
+    if ( y >= 800 - width/10) {
+      y *= -1;
     }
   }
   public void show() {
     circle(x, y, size);
-  }
-  public void hide() {
-    
   }
 }
